@@ -69,7 +69,7 @@ export default function App() {
           <div className="flex-1 text-center lg:text-left">
             <span className="font-mono text-xs uppercase tracking-[0.4em] text-brand-deep mb-8 block">Manual de Campo para Expertos</span>
             <h1 className="text-4xl md:text-6xl font-serif text-brand-navy leading-[1.1] mb-8 text-balance">
-              Cómo Crear Libros Digitales de no ficción en tiempo récord
+              Cómo Crear Ebooks de no ficción en tiempo récord
             </h1>
             <p className="text-xl md:text-2xl font-serif italic text-brand-slate mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               Un sistema de ingeniería de producto aplicado al conocimiento para transformar tu saber en un activo rentable y duradero.
