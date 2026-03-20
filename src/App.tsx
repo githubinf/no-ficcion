@@ -36,7 +36,7 @@ const Section = ({ children, className = "", id }: { children: React.ReactNode; 
 
 const ChapterCard = ({ number, title, description, details, expandedContent }: { number: string; title: string; description: string; details: string[]; expandedContent: string }) => (
   <div className="border-l border-brand-deep/10 pl-8 py-5 mb-8">
-    <span className="font-mono text-xs uppercase tracking-widest text-brand-deep/60 mb-2 block">Capítulo {number}</span>
+    <span className="font-mono text-sm uppercase tracking-widest text-brand-deep/60 mb-2 block">Capítulo {number}</span>
     <h3 className="text-3xl font-serif mb-6 text-brand-navy">{title}</h3>
     <p className="text-brand-slate leading-relaxed mb-8 text-lg max-w-3xl">{description}</p>
     
@@ -56,6 +56,10 @@ const ChapterCard = ({ number, title, description, details, expandedContent }: {
 );
 
 export default function App() {
+  const scrollToOffer = () => {
+    document.getElementById('precio-final')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen selection:bg-brand-deep/10">
       {/* Hero Section */}
@@ -67,7 +71,7 @@ export default function App() {
           className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16"
         >
           <div className="flex-1 text-center lg:text-left">
-            <span className="font-mono text-xs uppercase tracking-[0.4em] text-brand-deep mb-8 block">Manual de Campo para Expertos</span>
+            <span className="font-mono text-sm uppercase tracking-[0.4em] text-brand-deep mb-8 block">Manual de Campo para Expertos</span>
             <h1 className="text-4xl md:text-6xl font-serif text-brand-navy leading-[1.1] mb-8 text-balance">
               Cómo Crear Ebooks de no ficción en tiempo récord
             </h1>
@@ -75,16 +79,16 @@ export default function App() {
               Un sistema de ingeniería de producto aplicado al conocimiento para transformar tu saber en un activo rentable y duradero.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-8">
-              <a 
-                href="#precio-final" 
-                className="bg-brand-deep text-white px-10 py-5 rounded-full font-medium text-lg hover:bg-brand-navy transition-all shadow-2xl shadow-brand-deep/20 flex items-center gap-3"
+              <button 
+                onClick={scrollToOffer}
+                className="bg-brand-deep text-white px-10 py-5 rounded-full font-medium text-lg hover:bg-brand-navy transition-all shadow-2xl shadow-brand-deep/20 flex items-center gap-3 cursor-pointer"
               >
                 Obtener el sistema por $9,99
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </button>
               <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
                 <span className="text-sm text-brand-navy font-bold">Acceso inmediato</span>
-                <span className="text-xs text-brand-slate/60 uppercase tracking-widest">Garantía total de 30 días</span>
+                <span className="text-sm text-brand-slate/60 uppercase tracking-widest">Garantía total de 30 días</span>
               </div>
             </div>
           </div>
@@ -132,13 +136,13 @@ export default function App() {
               El mercado actual no busca "literatura", busca "resultados". Busca a alguien que le diga: "He estado donde tú estás, he resuelto el problema y aquí tienes el mapa para que tú también lo hagas". Ese mapa es tu libro digital. Y mi misión es que dejes de ser un experto silencioso para convertirte en una autoridad visible.
             </p>
             <div className="pt-8">
-              <a 
-                href="#precio-final" 
-                className="inline-flex items-center gap-3 bg-brand-deep text-white px-8 py-4 rounded-full font-medium hover:bg-brand-navy transition-all shadow-lg shadow-brand-deep/10"
+              <button 
+                onClick={scrollToOffer}
+                className="inline-flex items-center gap-3 bg-brand-deep text-white px-8 py-4 rounded-full font-medium hover:bg-brand-navy transition-all shadow-lg shadow-brand-deep/10 cursor-pointer"
               >
                 Quiero dejar de ser invisible
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -232,13 +236,13 @@ export default function App() {
               </li>
             </ul>
             <div className="mt-16 text-center">
-              <a 
-                href="#precio-final" 
-                className="inline-flex items-center gap-3 bg-brand-navy text-white px-10 py-5 rounded-full font-medium text-lg hover:bg-brand-deep transition-all shadow-xl"
+              <button 
+                onClick={scrollToOffer}
+                className="inline-flex items-center gap-3 bg-brand-navy text-white px-10 py-5 rounded-full font-medium text-lg hover:bg-brand-deep transition-all shadow-xl cursor-pointer"
               >
                 Empezar a construir mi activo hoy
                 <Zap className="w-5 h-5 text-brand-sage" />
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -247,7 +251,7 @@ export default function App() {
       {/* El Método Detallado (Expandido) */}
       <Section id="metodo">
         <div className="text-center mb-24">
-          <span className="font-mono text-xs uppercase tracking-widest text-brand-deep mb-4 block">Arquitectura del Sistema</span>
+          <span className="font-mono text-sm uppercase tracking-widest text-brand-deep mb-4 block">Arquitectura del Sistema</span>
           <h2 className="text-5xl md:text-6xl font-serif text-brand-navy mb-8">Un viaje de sesenta días</h2>
           <p className="text-brand-slate max-w-3xl mx-auto text-xl font-light">
             No es una carrera de fondo, es una serie de etapas estratégicas diseñadas para que nunca te sientas perdido.
@@ -312,13 +316,13 @@ export default function App() {
           />
 
           <div className="py-12 text-center">
-            <a 
-              href="#precio-final" 
-              className="inline-flex items-center gap-3 border-2 border-brand-deep text-brand-deep px-8 py-4 rounded-full font-bold hover:bg-brand-deep hover:text-white transition-all"
+            <button 
+              onClick={scrollToOffer}
+              className="inline-flex items-center gap-3 border-2 border-brand-deep text-brand-deep px-8 py-4 rounded-full font-bold hover:bg-brand-deep hover:text-white transition-all cursor-pointer"
             >
               Aplicar este método a mi conocimiento
               <ChevronRight className="w-5 h-5" />
-            </a>
+            </button>
           </div>
 
           <ChapterCard 
@@ -399,33 +403,33 @@ export default function App() {
               <div className="p-6 bg-brand-sage/40 rounded-3xl border border-brand-deep/5">
                 <Users className="w-8 h-8 text-brand-deep mb-4" />
                 <h4 className="font-bold text-brand-navy mb-2">Comunidad</h4>
-                <p className="text-xs text-brand-slate/70">Transforma a tus lectores en una comunidad vibrante de aprendizaje.</p>
+                <p className="text-sm text-brand-slate/70">Transforma a tus lectores en una comunidad vibrante de aprendizaje.</p>
               </div>
               <div className="p-6 bg-brand-sage/40 rounded-3xl border border-brand-deep/5">
                 <TrendingUp className="w-8 h-8 text-brand-deep mb-4" />
                 <h4 className="font-bold text-brand-navy mb-2">Escalabilidad</h4>
-                <p className="text-xs text-brand-slate/70">Crea productos de diferentes niveles de precio basados en el mismo contenido.</p>
+                <p className="text-sm text-brand-slate/70">Crea productos de diferentes niveles de precio basados en el mismo contenido.</p>
               </div>
               <div className="p-6 bg-brand-sage/40 rounded-3xl border border-brand-deep/5">
                 <Award className="w-8 h-8 text-brand-deep mb-4" />
                 <h4 className="font-bold text-brand-navy mb-2">Prestigio</h4>
-                <p className="text-xs text-brand-slate/70">Usa tu libro para acceder a conferencias y eventos de alto nivel.</p>
+                <p className="text-sm text-brand-slate/70">Usa tu libro para acceder a conferencias y eventos de alto nivel.</p>
               </div>
               <div className="p-6 bg-brand-sage/40 rounded-3xl border border-brand-deep/5">
                 <Globe className="w-8 h-8 text-brand-deep mb-4" />
                 <h4 className="font-bold text-brand-navy mb-2">Alcance</h4>
-                <p className="text-xs text-brand-slate/70">Llega a mercados internacionales sin costes de logística física.</p>
+                <p className="text-sm text-brand-slate/70">Llega a mercados internacionales sin costes de logística física.</p>
               </div>
             </div>
           </div>
           <div className="mt-16 text-center">
-            <a 
-              href="#precio-final" 
-              className="inline-flex items-center gap-3 bg-brand-sage text-brand-navy px-10 py-5 rounded-full font-bold text-lg hover:bg-brand-navy hover:text-white transition-all border border-brand-navy/10"
+            <button 
+              onClick={scrollToOffer}
+              className="inline-flex items-center gap-3 bg-brand-sage text-brand-navy px-10 py-5 rounded-full font-bold text-lg hover:bg-brand-navy hover:text-white transition-all border border-brand-navy/10 cursor-pointer"
             >
               Escalar mi negocio con un libro
               <TrendingUp className="w-5 h-5" />
-            </a>
+            </button>
           </div>
         </div>
       </Section>
@@ -472,7 +476,7 @@ export default function App() {
                 <div className="w-12 h-12 rounded-full bg-brand-deep/10 flex items-center justify-center font-serif text-brand-deep font-bold">JA</div>
                 <div>
                   <p className="font-bold text-brand-navy">Jorge Alfaro</p>
-                  <p className="text-xs text-brand-slate/60 uppercase tracking-widest">Paisajista</p>
+                  <p className="text-sm text-brand-slate/60 uppercase tracking-widest">Paisajista</p>
                 </div>
               </div>
             </motion.div>
@@ -493,7 +497,7 @@ export default function App() {
                 <div className="w-12 h-12 rounded-full bg-brand-deep/10 flex items-center justify-center font-serif text-brand-deep font-bold">PL</div>
                 <div>
                   <p className="font-bold text-brand-navy">Patricia Luque</p>
-                  <p className="text-xs text-brand-slate/60 uppercase tracking-widest">Consultora RRHH</p>
+                  <p className="text-sm text-brand-slate/60 uppercase tracking-widest">Consultora RRHH</p>
                 </div>
               </div>
             </motion.div>
@@ -514,20 +518,20 @@ export default function App() {
                 <div className="w-12 h-12 rounded-full bg-brand-deep/10 flex items-center justify-center font-serif text-brand-deep font-bold">RM</div>
                 <div>
                   <p className="font-bold text-brand-navy">Ricardo Maza</p>
-                  <p className="text-xs text-brand-slate/60 uppercase tracking-widest">Abogado Digital</p>
+                  <p className="text-sm text-brand-slate/60 uppercase tracking-widest">Abogado Digital</p>
                 </div>
               </div>
             </motion.div>
           </div>
 
           <div className="mt-16 text-center">
-            <a 
-              href="#precio-final" 
-              className="inline-flex items-center gap-4 bg-brand-navy text-white px-12 py-6 rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-2xl"
+            <button 
+              onClick={scrollToOffer}
+              className="inline-flex items-center gap-4 bg-brand-navy text-white px-12 py-6 rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-2xl cursor-pointer"
             >
               Unirme a los autores de éxito
               <Award className="w-6 h-6 text-brand-sage" />
-            </a>
+            </button>
             <p className="mt-4 text-brand-slate/60 text-sm italic">Únete a más de 500 expertos que ya han digitalizado su saber.</p>
           </div>
         </div>
@@ -658,32 +662,35 @@ export default function App() {
               </div>
             </div>
 
-            <button className="w-full bg-brand-deep text-white py-6 rounded-2xl font-bold text-2xl hover:bg-brand-navy transition-all flex items-center justify-center gap-4 group shadow-xl shadow-brand-deep/20">
+            <a 
+              href="https://fcofrancis.pay.clickbank.net/?cbitems=11"
+              className="w-full bg-brand-deep text-white py-6 rounded-2xl font-bold text-2xl hover:bg-brand-navy transition-all flex items-center justify-center gap-4 group shadow-xl shadow-brand-deep/20"
+            >
               Adquirir el Sistema
               <ChevronRight className="w-7 h-7 group-hover:translate-x-2 transition-transform" />
-            </button>
-            <p className="mt-6 text-xs text-brand-slate/40 uppercase tracking-widest font-medium">Descarga inmediata tras el pago seguro</p>
+            </a>
+            <p className="mt-6 text-sm text-brand-slate/40 uppercase tracking-widest font-medium">Descarga inmediata tras el pago seguro</p>
           </div>
 
           <div className="mt-24 border-t border-white/10 pt-16 grid md:grid-cols-3 gap-12">
             <div className="flex flex-col items-center gap-4">
               <ShieldCheck className="w-14 h-14 text-white/30" />
               <div className="text-center">
-                <p className="font-bold uppercase tracking-widest text-xs mb-2">Garantía de 30 Días</p>
+                <p className="font-bold uppercase tracking-widest text-sm mb-2">Garantía de 30 Días</p>
                 <p className="text-sm text-white/60">Si no ves claro tu libro en un mes, te devolvemos cada dólar.</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
               <Lock className="w-14 h-14 text-white/30" />
               <div className="text-center">
-                <p className="font-bold uppercase tracking-widest text-xs mb-2">Seguridad Total</p>
+                <p className="font-bold uppercase tracking-widest text-sm mb-2">Seguridad Total</p>
                 <p className="text-sm text-white/60">Procesamiento de pagos con estándares internacionales de seguridad.</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
               <RefreshCw className="w-14 h-14 text-white/30" />
               <div className="text-center">
-                <p className="font-bold uppercase tracking-widest text-xs mb-2">Actualizaciones</p>
+                <p className="font-bold uppercase tracking-widest text-sm mb-2">Actualizaciones</p>
                 <p className="text-sm text-white/60">Acceso gratuito a todas las futuras revisiones del sistema.</p>
               </div>
             </div>
@@ -695,7 +702,7 @@ export default function App() {
       <Section id="autor" className="bg-[#fcfcf9]">
         <div className="max-w-5xl mx-auto flex flex-col lg:flex-row gap-20 items-center justify-center">
           <div className="space-y-8 max-w-3xl text-center lg:text-left">
-            <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand-deep mb-2 block">La mente tras el método</span>
+            <span className="font-mono text-sm uppercase tracking-[0.3em] text-brand-deep mb-2 block">La mente tras el método</span>
             <h2 className="text-4xl md:text-5xl font-serif text-brand-navy">Francisco González</h2>
             <div className="space-y-6 text-brand-slate text-lg leading-relaxed font-light text-justify">
               <p>
@@ -715,10 +722,10 @@ export default function App() {
       {/* Footer */}
       <footer className="py-10 px-6 border-t border-brand-deep/5 text-center bg-brand-sage/10">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs text-brand-slate/60 tracking-wide leading-relaxed mb-6">
-            © Francisco González· Todos los derechos reservados. <br/> Este libro ofrece información general basada en la experiencia del autor. Los resultados pueden variar según la dedicación y circunstancias de cada lector.
+          <p className="text-sm text-brand-slate/60 tracking-wide leading-relaxed mb-6">
+            © Francisco González· Todos los derechos reservados. <br/> Este libro ofrece información general basada en la experiencia del autor. <br/> Los resultados pueden variar según la dedicación y circunstancias de cada lector.
           </p>
-          <p className="text-xs font-bold text-brand-deep tracking-widest">
+          <p className="text-sm font-bold text-brand-deep tracking-widest">
             ⚡ Edición 2026 · Cómo Crear Ebooks
           </p>
         </div>
